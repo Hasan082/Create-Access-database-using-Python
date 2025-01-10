@@ -29,7 +29,22 @@ cursor_obj.execute(show)
 output_all = cursor_obj.fetchall()
 for row in output_all:
     print(row)
-# print(output_all)
+
+# NOW FETCH LIMIT NUMBER OF DATA
+cursor_obj.execute(show)
+OUTPUT_LIMIT = cursor_obj.fetchmany(2)
+print(OUTPUT_LIMIT)
+
+# FETCH FIRST NAME ONLY
+f_name_statement = """SELECT FNAME FROM INSTRUCTOR"""
+cursor_obj.execute(f_name_statement)
+output_all_f_name = cursor_obj.fetchall()
+print(output_all_f_name)
+
+
+
+
+
 
 # Commit the changes (important for data integrity)
 conn.commit()
