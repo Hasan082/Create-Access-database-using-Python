@@ -1,7 +1,10 @@
 import sqlite3
+from sqlite3 import Connection
+
+import pandas as pd
 
 # CREATE A DATABASE
-conn = sqlite3.connect('instructor.db')
+conn: Connection = sqlite3.connect('instructor.db')
 cursor_obj = conn.cursor()
 
 # DROP TABLE IF EXIST
@@ -51,9 +54,10 @@ output_all_update = cursor_obj.fetchall()
 print(output_all_update)
 
 # Now Retrieve data into Pandas
-
-
-
+df = pd.read_sql_query("select * from INSTRUCTOR", conn)
+# Loop through DataFrame and print each row in a formatted way
+for i, (index, row) in enumerate(df.iterrows()):
+    print(f"Row {i+1}: ID={row['ID']}, FNAME={row['FNAME']}, LNAME={row['LNAME']}, CITY={row['CITY']}, CCODE={row['CCODE']}")
 
 # Commit the changes (important for data integrity)
 conn.commit()
