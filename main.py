@@ -1,2 +1,5 @@
+import sqlite3
 
-print("Hello World")
+conn = sqlite3.connect('INSTRUCTOR.db')
+cursor_obj = conn.cursor()
+
