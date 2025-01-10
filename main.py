@@ -50,6 +50,7 @@ cursor_obj.execute(show)
 output_all_update = cursor_obj.fetchall()
 print(output_all_update)
 
+# Now Retrieve data into Pandas
 
 
 
