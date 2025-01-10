@@ -41,6 +41,14 @@ cursor_obj.execute(f_name_statement)
 output_all_f_name = cursor_obj.fetchall()
 print(output_all_f_name)
 
+# UPDATE ROW VALUE NOW
+update_statement = """UPDATE INSTRUCTOR SET CITY='DHAKA' WHERE FNAME='Mollika';"""
+cursor_obj.execute(update_statement)
+
+# NOW SHOW UPDATE DATA
+cursor_obj.execute(show)
+output_all_update = cursor_obj.fetchall()
+print(output_all_update)
 
 
 
