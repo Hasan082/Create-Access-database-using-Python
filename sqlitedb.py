@@ -55,6 +55,7 @@ print(output_all_update)
 
 # Now Retrieve data into Pandas
 df = pd.read_sql_query("select * from INSTRUCTOR", conn)
+print(df.LNAME[0])
 # Loop through DataFrame and print each row in a formatted way
 for i, (index, row) in enumerate(df.iterrows()):
     print(f"Row {i+1}: ID={row['ID']}, FNAME={row['FNAME']}, LNAME={row['LNAME']}, CITY={row['CITY']}, CCODE={row['CCODE']}")
