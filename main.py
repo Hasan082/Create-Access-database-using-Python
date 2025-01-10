@@ -24,6 +24,13 @@ insert_data = """INSERT INTO INSTRUCTOR (FNAME, LNAME, CITY, CCODE) VALUES ('Md'
 '11'), ('Faria', 'Maahi' , 'Dhaka', '12');"""
 cursor_obj.execute(insert_data)
 
+show = """SELECT * FROM INSTRUCTOR;"""
+cursor_obj.execute(show)
+output_all = cursor_obj.fetchall()
+for row in output_all:
+    print(row)
+# print(output_all)
+
 # Commit the changes (important for data integrity)
 conn.commit()
 # Close the connection
